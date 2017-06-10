@@ -15,7 +15,7 @@ var ccGame =
 		var imageBank = ['assets/images/gem1.png', 'assets/images/gem2.png', 'assets/images/gem3.png',
             'assets/images/gem4.png', 'assets/images/gem5.png', 'assets/images/gem6.png',
             'assets/images/gem7.png', 'assets/images/gem8.png', 'assets/images/gem9.png'];             // show the crystal image bank
-        this.targetNum = [Math.floor(Math.random() * (140 - 14)) + 17];                                // select a random target number for game play
+        this.targetNum = [Math.floor(Math.random() * (120 - 19)) + 19];                                // select a random target number for game play
         $('#target-num').text(this.targetNum);                                                         // display target number
         this.playerScore = 0;                                                                          // reset the players number to 0
         $('#player-score').text(this.playerScore);                                                     // display initial player score
