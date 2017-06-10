@@ -2,9 +2,156 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Document</title>
+	<!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Style Sheets RESET -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- Style Overrides CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 <body>
-	
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="jumbotron primary">
+                <div class="row">
+                    <h1>You are a Crystal's Collector</h1>
+                </div>
+                <div class="row sub-title">
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#rulesModal">
+                            Game Rules
+                        </button>
+                    </div>
+                    <div class="col-xs-10 text-right sub-title-text">
+                        Wins: <span id="win-count">&nbsp;</span>&nbsp;&nbsp; | &nbsp;&nbsp;Losses: <span
+                                id="loss-count">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+            <div class="panel panel-custom panel-left">
+                <div class="panel-heading">
+                    TARGET NUMBER
+                </div>
+                <div class="panel-body">
+                    <div id="target-num" class="panel-body text-center">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+            <div class="panel panel-custom panel-right">
+                <div class="panel-heading">
+                    PLAYER SCORE
+                </div>
+                <div class="panel-body">
+                    <div id="player-score" class="panel-body text-center">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-custom">
+                <div id="game-board" class="row">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GAME WIN MODAL -->
+<div class="modal fade" id="winModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h2>YOU WON !!! &nbsp;&nbsp;:D</h2>
+                <h4>CONGRATULATIONS</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary play-again" data-toggle="modal" data-target="play-again"
+                        data-dismiss="modal">
+                    Play Again
+                </button>
+                <button type="button" class="btn btn-danger exit" data-toggle="modal" data-target="exit"
+                        data-dismiss="modal">
+                    Quit Game
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="rulesModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"></button>
+                <h4 class="modal-title" id="myModalLabel">Game Rules</h4>
+            </div>
+            <div class="modal-body">
+                <p>A TARGET NUMBER will be randomly selected at the beginning of each new game.</p>
+                <p>Your objective is to match the TARGET NUMBER by clicking on the crystals.</p>
+                <p>Each crystal holds a hidden value which will be added to the PLAYER SCORE.</p>
+                <p>The value for each crystal will not change during the game, however, it may change from round to
+                    round. </p>
+                <p>You WIN by matching the PLAYER SCORE to the TARGET number without going over.
+                <p>&nbsp;</p>
+                <p><strong>GOOD LUCK</strong> - and happy crystal collecting!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GAME LOST MODAL -->
+<div class="modal fade" id="lostModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h2>YOU LOST &nbsp;&nbsp;: (</h2>
+                <h4>You went over the Target Number</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary play-again" data-toggle="modal" data-target="play-again"
+                        data-dismiss="modal">
+                    Try Again
+                </button>
+                <button type="button" class="btn btn-danger exit" data-toggle="modal" data-target="exit"
+                        data-dismiss="modal">
+                    Quit Game
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; Jaime A. Umana.</p>
+</footer>
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<!-- Link to the game javascript file -->
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </body>
 </html>

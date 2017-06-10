@@ -1,0 +1,84 @@
+body {
+	-webkit-background-size:;
+	background-image: url(../images/cc-bg2.jpg);
+}
+
+.jumbotron {
+    margin: 15px 0px 5px 0px;
+    padding: 5px 0px 15px 0px;
+    background: linear-gradient(#786e89, #534367);
+    /*border: 1px solid #2e2737;*/
+}
+
+.jumbotron h1 {
+    font-family: 'Poiret One', cursive;
+    font-size: 49px;
+    text-align: center;
+    color: white;
+}
+
+.panel-left {
+    margin-right: -12px;
+    margin-bottom: 5px;
+}
+
+.panel-right {
+    margin-left: -12px;
+    margin-bottom: 5px;
+}
+
+#target-num, #player-score {
+    font-size: 4em;
+}
+
+#game-board {
+    padding: 15px;
+}
+
+.panel, .panel-custom {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #3b2f55;
+    /*border: 1px solid #2e2737;*/
+}
+
+.img-zoom {
+    margin: 10px;
+    width: 90%;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    cursor: pointer;
+
+}
+
+.panel-heading {
+    background: #604f71;
+    padding: 5px 15px;
+    color: white;
+    border: none;
+}
+
+.sub-title-text {
+    font-size: 28px;
+    color: white;
+    position: relative;
+    top: 5px;
+}
+
+.transition {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+footer {
+      font-size: 2em;
+      text-align: center;
+      clear: both;
+      color: #ccc;
+      background-color: #786e89;
+      font-family: 'Poiret One', cursive;
+    }
